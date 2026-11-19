@@ -6,19 +6,19 @@ FastAPI のルートに Amazon Verified Permissions の認可を追加する Pyt
 
 ## インストール
 
-Python 3.11 以降に対応しています。uv を使う場合は、プロジェクトのディレクトリで次のコマンドを実行します。
+Python 3.11 以降に対応しています。uv のプロジェクトでは次のコマンドで追加できます。
 
 ```sh
-uv add "fastapi-verified-permissions @ git+https://github.com/yuu551/fastapi-verified-permissions.git@v0.1.0"
+uv add fastapi-verified-permissions
 ```
 
-pip を使う場合はこちらです。
+pip を使う場合は次のコマンドを実行してください。
 
 ```sh
-pip install "fastapi-verified-permissions @ git+https://github.com/yuu551/fastapi-verified-permissions.git@v0.1.0"
+python -m pip install fastapi-verified-permissions
 ```
 
-PyPI での初回公開後は、`uv add fastapi-verified-permissions` または `pip install fastapi-verified-permissions` でインストールできます。
+[PyPI](https://pypi.org/project/fastapi-verified-permissions/) · [GitHub Releases](https://github.com/yuu551/fastapi-verified-permissions/releases)
 
 ## 文書の閲覧を制御する
 

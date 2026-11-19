@@ -1,24 +1,24 @@
 # fastapi-verified-permissions
 
-English · [日本語](https://github.com/yuu551/fastapi-verified-permissions/blob/v0.1.0/README.ja.md)
+English · [日本語](https://github.com/yuu551/fastapi-verified-permissions/blob/main/README.ja.md)
 
 Protect individual FastAPI routes with [Amazon Verified Permissions](https://aws.amazon.com/verified-permissions/). Declare an action and a resource dependency, then add the resulting dependency to a route with `Depends()`. Boto3 makes the authorization request in a synchronous FastAPI dependency, so an async route can use the same API.
 
 ## Install
 
-Requires Python 3.11 or later. To install the GitHub release in a uv project, run
+Requires Python 3.11 or later. In a uv project, run
 
 ```sh
-uv add "fastapi-verified-permissions @ git+https://github.com/yuu551/fastapi-verified-permissions.git@v0.1.0"
+uv add fastapi-verified-permissions
 ```
 
-For pip, run
+To install with pip, run
 
 ```sh
-pip install "fastapi-verified-permissions @ git+https://github.com/yuu551/fastapi-verified-permissions.git@v0.1.0"
+python -m pip install fastapi-verified-permissions
 ```
 
-Once the first release is available on PyPI, install by name with `uv add fastapi-verified-permissions` or `pip install fastapi-verified-permissions`.
+[PyPI](https://pypi.org/project/fastapi-verified-permissions/) · [GitHub Releases](https://github.com/yuu551/fastapi-verified-permissions/releases)
 
 ## Protect a document endpoint
 
