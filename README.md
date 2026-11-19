@@ -4,6 +4,8 @@ English · [日本語](https://github.com/yuu551/fastapi-verified-permissions/bl
 
 Protect individual FastAPI routes with [Amazon Verified Permissions](https://aws.amazon.com/verified-permissions/). Declare an action and a resource dependency, then add the resulting dependency to a route with `Depends()`. Boto3 makes the authorization request in a synchronous FastAPI dependency, so an async route can use the same API.
 
+[Try the playground](https://yuu551.github.io/verified-permissions-playground/) · [Deploy the AWS CDK sample](https://github.com/yuu551/verified-permissions-playground)
+
 ## Install
 
 Requires Python 3.11 or later. In a uv project, run

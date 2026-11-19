@@ -4,6 +4,8 @@
 
 FastAPI のルートに Amazon Verified Permissions の認可を追加する Python パッケージです。アクションとリソースを指定し、ルートに `Depends()` で認可を組み込みます。Boto3 の呼び出しは FastAPI の同期依存関数で実行するため、`async def` のルートでも利用できます。
 
+[ブラウザーで認可を試す](https://yuu551.github.io/verified-permissions-playground/) · [画面付き AWS CDK サンプル](https://github.com/yuu551/verified-permissions-playground/blob/main/README.ja.md)
+
 ## インストール
 
 Python 3.11 以降に対応しています。uv のプロジェクトでは次のコマンドで追加できます。
