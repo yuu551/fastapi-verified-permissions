@@ -1,6 +1,6 @@
 # fastapi-verified-permissions
 
-[English](./README.md) · 日本語
+[English](./README.md) · 日本語 · [Hono 版（TypeScript）](https://github.com/yuu551/hono-verified-permissions/blob/main/README.ja.md)
 
 FastAPI のルートに Amazon Verified Permissions の認可を追加する Python パッケージです。アクションとリソースを指定し、ルートに `Depends()` で認可を組み込みます。Boto3 の呼び出しは FastAPI の同期依存関数で実行するため、`async def` のルートでも利用できます。
 
@@ -57,6 +57,14 @@ permit(
 );
 ```
 
+ポリシーを登録したら、`API_URL` にアプリケーションの URL、`ACCESS_TOKEN` に Cognito のアクセストークンを設定して、文書を取得します。
+
+```sh
+curl -i -H "Authorization: Bearer ${ACCESS_TOKEN}" "${API_URL}/documents/guide"
+```
+
+このポリシーだけを登録した場合、指定したユーザーには `200` と文書 ID が返ります。別のユーザーの有効なトークンで同じ文書を要求すると `403` が返ります。
+
 アプリケーション側でセッションを検証している場合は `principal=current_user` を指定します。依存関数は、認証済みセッションから作った `Entity` を返します。未認証なら `None` を返してください。この方式では `IsAuthorized` を呼ぶため、実行ロールに `verifiedpermissions:IsAuthorized` が必要です。認可判定に追加の情報が必要なら、`context` で Cedar JSON のオブジェクトを、`entities` でエンティティの配列を返す依存関数を指定してください。依存関数は同期・非同期のどちらでも書けます。
 
 | 判定 | FastAPI の動作 |
@@ -92,4 +100,4 @@ uv run pytest integration/test_emulator.py
 
 テストの接続先は `https://127.0.0.1:9297` です。別ポートは `AWS_EMULATOR_PORT` で指定します。Emulator が発行した認証情報と CA を使い、テスト用のポリシーストアと Cognito ユーザープールを作成します。2人のユーザーでサインインし、エンティティ、アクセストークン、ID トークンの3方式で文書ごとの許可・拒否と `forbid` の動作を確認してから、リソースを削除します。
 
-[ルートの実装例](./examples/documents.py) · [Hono 版](https://github.com/yuu551/hono-verified-permissions) · [Apache License 2.0](./LICENSE)
+[ルートの実装例](./examples/documents.py) · [Apache License 2.0](./LICENSE)
