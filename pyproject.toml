@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fastapi-verified-permissions"
+version = "0.1.0"
+description = "Route authorization for FastAPI with Amazon Verified Permissions"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = ["boto3>=1.43,<2", "fastapi>=0.121,<1"]
+
+[project.urls]
+Repository = "https://github.com/yuu551/fastapi-verified-permissions"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx2>=2,<3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
